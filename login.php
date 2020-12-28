@@ -22,13 +22,20 @@
 	<center><img src="assets/images/logo.jpg" class="img-responsive" id="bLogo" alt="logo" width="150px" height="150px" hspace="10px" style="padding: 100px 0px 0px 0px;"></center>
 </div>
 <div class="col-md-6" id="rightContent">
-	<h4>Enter your Registration No.</h4>
+	<center><h4>Enter your Registration No.</h4>
 	<form role="form" class="form-inline" action="scripts/login.php" method="POST"> 
-		<div class="form-group">
+		<center><div class="form-group">
 			<input type="text" class="form-control" name="regNo" placeholder="Enter Registration No." maxlength="10" required>
 		</div>
 		<input type="submit" class="form-control" name="login" value="Login">
+		<div>
+			<hr>
+			<p><h4>Not yet registered? </h4></p>
+			<p><h3><a href="register.php" title="registeration link">Register</a></h3></p>
+
+		</div>
 	</form>
+	</center>
 </div>
 </div>
 <div class="row">

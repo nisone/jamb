@@ -31,7 +31,7 @@ class Database extends Connection{
 		try {
 			$stmt = $this->datab->prepare($query);
 			$stmt->execute($params);
-			return $stmt->fetchAll();	
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);	
 		} catch (PDOException $e) {
 			throw new Exception($e->getMessage());	
 		}
@@ -90,6 +90,10 @@ class Database extends Connection{
 
 	public function Commit(){
 		$this->transaction->commit();
+	}
+
+	public function RollBack(){
+		$this->transaction->rollBack();
 	}
 
 	public function test()

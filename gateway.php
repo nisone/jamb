@@ -102,7 +102,8 @@ function submit($db, $subId){
 	 */
 
 	$_SESSION['qAns'][$subId] = 0;
-	foreach ($_SESSION['qBank'][1] as $key => $value) {
+	//NOTE the line bellow cost me time debugging this code, i accidentily put 1 inplace of $subId which course all the score to be the same with first subject score to be submit
+	foreach ($_SESSION['qBank'][$subId] as $key => $value) {
 		$_SESSION['qAns'][$subId] += $value['mark'];
 	}
 
@@ -131,7 +132,7 @@ function getTime($subId){
 	if(isset($_SESSION['time'][$subId])){
 		return json_encode(['STATUS' => 'OK', 'TIME' => $_SESSION['time'][$subId]-time()]);	
 	}else{
-		$time = strtotime('+1 hours 30 minutes');
+		$time = strtotime('+5 minutes');//strtotime('+1 hours 30 minutes');
 		$_SESSION['time'][$subId] = $time;
 		return json_encode(['STATUS' => 'OK', 'TIME' => $_SESSION['time'][$subId]-strtotime('now')]);		
 	}

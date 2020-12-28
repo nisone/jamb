@@ -45,8 +45,7 @@
 					foreach ($subject as $row => $col) {
 						$title = $db->getRow('SELECT title FROM jamb_subject WHERE id=?', [$col['subject_id']])['title'];
 						echo "<tr><td>".++$row."</td><td>". strtoupper(substr($title, 0, 3)) ."</td><td>$title</td><td><button class='btn btn-success' onclick='window.location = \"app.php?s=".$col['subject_id']."\"'>
-						<span class='glyphicon glyphicon-pencil'></span> Start exam
-					</button></td></tr>";
+						<span class='glyphicon glyphicon-pencil'></span> Start Exam </button></td></tr>";
 
 						$_SESSION['enroll'][$col['subject_id']] = $title;
 						$_SESSION['qBank'][$col['subject_id']] = array();

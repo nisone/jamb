@@ -4,7 +4,8 @@
  // foreach ($_SERVER as $row => $col) {
  // 	echo $row . ' ' . $col . '<br>';
  // }
-session_start();
+//session_start();
+
 // try{
 // throw new Exception("Error Processing Request", 1);
 // }catch(Exception $e){
@@ -28,6 +29,19 @@ session_start();
 // echo 'Next Week: '. date('Y-m-d', $nextWeek) ."\n";
 // // or using strtotime():
 // echo 'Next Week: '. date('Y-m-d', strtotime('+1 week')) ."\n";
+
+
+#Testing result printing
+/*
+require('includes/config.php');
+$db->test();
+$results = $db->getRows("SELECT DISTINCT(user_id),score FROM jamb_result WHERE subject_id=1");
+foreach ($results as $row) {
+	# code...
+	$name = $db->getRow("SELECT fname, lname FROM user_profile WHERE user_id=$row[user_id]");
+	echo "<p>" . $name['fname'] . " " . strtoupper($name['lname']) . " " . $row['score'] . "</p>";
+}
+*/
 ?>
 
 
