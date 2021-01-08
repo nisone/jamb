@@ -42,7 +42,7 @@ class Database extends Connection{
 		try {
 			$stmt = $this->datab->prepare($query);
 			$stmt->execute($params);
-			return TRUE;	
+			return true;	
 		} catch (PDOException $e) {
 			throw new Exception($e->getMessage());	
 		}
